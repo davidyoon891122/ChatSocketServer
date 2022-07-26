@@ -8,10 +8,21 @@ const io = new Server(server)
 
 const PORT = 5006
 
+const chatRoom = io.of('/chatRoom')
+
 app.get('/', (req, res) => {
   console.log(req.query)
   res.json({
     server: 'ChatSocketServer',
+  })
+})
+
+chatRoom.on('connection', (socket) => {
+  console.log('A user connected in the chatRoom')
+
+  socket.on('disconnect', () => {
+    socket.disconnect()
+    console.log('The client has disconnected')
   })
 })
 

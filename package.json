@@ -5,7 +5,7 @@
   },
   "scripts": {
     "test": "cross-env jest",
-    "local": "nodemon src/main.js"
+    "local": "nodemon src/app.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
