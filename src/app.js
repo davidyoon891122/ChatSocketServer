@@ -24,6 +24,10 @@ chatRoom.on('connection', (socket) => {
     socket.disconnect()
     console.log('The client has disconnected')
   })
+
+  socket.on('chatRoom', (message) => {
+    console.log(message)
+  })
 })
 
 server.listen(PORT, () => {
