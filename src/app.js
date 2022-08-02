@@ -27,6 +27,7 @@ chatRoom.on('connection', (socket) => {
 
   socket.on('chatRoom', (message) => {
     console.log(message)
+    socket.broadcast.emit('chatRoom', message)
   })
 })
 
